@@ -1,7 +1,8 @@
 const http = require("http");
 const fs = require('fs')
 
-const home = fs.readFileSync('./index.html',"utf-8")
+const home = fs.readFileSync('./index.html',"utf-8");
+const about = fs.readFileSync('./about.html',"utf-8")
 
 
 const server = http.createServer((req,res)=>{
@@ -10,7 +11,7 @@ const server = http.createServer((req,res)=>{
 
     }
     if(req.url === "/about"){
-       return res.end("<h1>about page</h1>")
+       return res.end(about)
 
     }
     if(req.url === "/contact"){
