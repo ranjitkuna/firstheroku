@@ -1,9 +1,12 @@
 const http = require("http");
-const fs = require('fs')
+const fs = require('fs');
+const express = require("express")
+
+
 
 const home = fs.readFileSync('./index.html',"utf-8");
 const about = fs.readFileSync('./about.html',"utf-8")
-
+console.log(express.url)
 
 const server = http.createServer((req,res)=>{
     if(req.url === "/"){
